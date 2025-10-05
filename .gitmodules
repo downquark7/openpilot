@@ -4,6 +4,7 @@
 [submodule "opendbc"]
   path = opendbc_repo
   url = https://github.com/downquark7/opendbc.git
+  branch = nissan-icbm
 [submodule "msgq"]
   path = msgq_repo
   url = https://github.com/sunnypilot/msgq.git
