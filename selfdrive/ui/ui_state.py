@@ -50,6 +50,7 @@ class UIState:
         "wideRoadCameraState",
         "managerState",
         "selfdriveState",
+        "selfdriveStateSP",
         "longitudinalPlan",
       ]
     )
