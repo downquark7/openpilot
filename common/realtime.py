@@ -11,10 +11,10 @@ from openpilot.system.hardware import PC
 
 
 # time step for each process
-DT_CTRL = 0.01  # controlsd
-DT_MDL = 0.05  # model
+DT_CTRL = 1.0 / 98.0  # controlsd
+DT_MDL = 5.0 / 98.0  # model
 DT_HW = 0.5  # hardwared and manager
-DT_DMON = 0.05  # driver monitoring
+DT_DMON = 5.0 / 98.0  # driver monitoring
 
 
 class Priority:
