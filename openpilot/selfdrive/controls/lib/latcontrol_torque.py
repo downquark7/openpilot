@@ -104,5 +104,9 @@ class LatControlTorque(LatControl):
       pid_log.desiredLateralJerk = float(desired_lateral_jerk)
       pid_log.saturated = bool(self._check_saturation(self.steer_max - abs(output_torque) < 1e-3, CS, steer_limited_by_safety, curvature_limited))
 
+    # provide the desired steering angle so car controllers that can blend angle control
+    # (e.g. Toyota LTA/LKAS blend) have an angle target; unused by torque-only controllers
+    angle_steers_des = math.degrees(VM.get_steer_from_curvature(-desired_curvature, CS.vEgo, params.roll)) + params.angleOffsetDeg
+
     # TODO left is positive in this convention
-    return -output_torque, 0.0, pid_log
+    return -output_torque, angle_steers_des, pid_log
